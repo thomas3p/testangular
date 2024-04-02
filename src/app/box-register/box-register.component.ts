@@ -26,14 +26,14 @@ export class BoxRegisterComponent implements OnInit{
   }
   sendinfo(){
     const info = {
-      fname:this.form?.controls['name'].value,
+      fname:this.form?.controls['fname'].value,
       lname:this.form?.controls['lname'].value,
       nickname:this.form?.controls['nickname'].value,
       id:this.form?.controls['id'].value,
       tel:this.form?.controls['tel'].value,
     }
     this.infomation.emit(info);
-    console.log(info);
+    console.log(this.form?.value);
     
   }
 
