@@ -1,0 +1,8 @@
+<div *ngIf="form">
+    <form [formGroup]="form">
+        <p>Name :<input ngClass="{'red':form.controls['fname'].errors}" type="text" formControlName="fname">    <input type="text" formControlName="lname"></p>
+        <p>Nickname :<input type="text" formControlName="nickname"></p>
+        <p>ID :<input type="text" formControlName="fname">    Tel :<input type="text" formControlName="lname"></p>
+        <button type="submit" (click)="sendinfo()">s</button>
+    </form>
+</div>

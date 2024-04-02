@@ -1,0 +1,7 @@
+<app-box-register (infomation)="recive = $event"></app-box-register>
+<div *ngIf="recive">
+    <p>Name :{{recive.fname}}  {{recive.lname}}</p>
+    <p>Nickname : {{recive.nickname}}</p>
+    <p>ID : {{recive.id}}</p>
+    <p>Telephone Number : {{recive.tel}}</p>
+</div>
