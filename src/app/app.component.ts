@@ -10,6 +10,22 @@ export class AppComponent implements OnInit {
   title = 'Expinc';
   form: FormGroup | undefined
 
+  user={
+    usernam:'',
+    password:'',
+    status_login : false,
+    firstname: '',
+    lastname:'',
+    nickname: '',
+    tel:'',
+    address:{
+      detail:'',
+      province:'',
+      district:'',
+      subdistrict:''
+    }
+  }
+
   constructor(private fb: FormBuilder){
 
   }

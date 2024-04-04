@@ -49,7 +49,7 @@
         <h3>Best Seller</h3>
         <!-- Loop through featured products -->
         <div class="row">
-          <div class="col card-deck" *ngFor="let product of products.slice(0,3)">
+          <div class="col card-deck" *ngFor="let product of products.slice(0,5)">
               <app-product-card [product]="product"></app-product-card>
           </div>
         <!-- Repeat the card structure for more products -->
@@ -57,7 +57,6 @@
     </div>
   </div>
 </div>
-
 <!-- Footer -->
 <footer class="footer mt-4">
   <div class="container">
