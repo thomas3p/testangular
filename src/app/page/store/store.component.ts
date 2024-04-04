@@ -91,8 +91,8 @@ export class StoreComponent {
     console.log(`Added ${product.name} to cart.`);
   }
 
-  images = ['https://github.com/thomas3p/testangular/blob/main/src/image/img1.jpg',
-   'https://github.com/thomas3p/testangular/blob/main/src/image/img2.jpg', 
-   'https://github.com/thomas3p/testangular/blob/main/src/image/img3.jpg'];
+  images = ['https://github.com/thomas3p/testangular/blob/main/src/image/img1.jpg?raw=true',
+   'https://github.com/thomas3p/testangular/blob/main/src/image/img2.jpg?raw=true', 
+   'https://github.com/thomas3p/testangular/blob/main/src/image/img3.jpg?raw=true'];
 }
 
