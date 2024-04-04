@@ -1,0 +1,80 @@
+<!-- 
+<app-header></app-header>
+<div>
+    <app-banner [imageSrc]="'https://cf.shopee.co.th/file/th-50009109-e8b047745f4497bc408dfd95043b2366'"></app-banner>
+</div>
+<main>
+    <div class="container-fluid">
+      <div class="row">
+        <app-sidebar></app-sidebar>
+        <div class="col-md-3">
+          <div class="category-item">
+            <ul class="list-group">
+              <li class="list-group-item">Category 1</li>
+              <li class="list-group-item">Category 2</li>
+              <li class="list-group-item">Category 3</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col card-deck" *ngFor="let product of products">
+                <app-product-card [product]="product"></app-product-card>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main> -->
+    <!-- <div class="row">
+        <app-sidebar></app-sidebar>
+        
+    </div> -->
+
+
+    <!-- index.component.html -->
+<div class="container-fluid bg-dark">
+  <!-- Header -->
+  <app-header class="bg-dark"></app-header>
+  <!-- Banner -->
+  <div class="banner">
+    <app-banner [images]="images"></app-banner>
+  </div>
+  <!-- Body -->
+  <div class="row mt-4">
+    <!-- Sidebar -->
+    <div class="col-md-3">
+      <div class="sidebar">
+        <h3>Categories</h3>
+        <!-- List of product categories -->
+        <ul class="list-group">
+          <li class="list-group-item">Category 1</li>
+          <li class="list-group-item">Category 2</li>
+          <li class="list-group-item">Category 3</li>
+          <!-- Add more categories here -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Body Area -->
+    <div class="col-md-9">
+      <div class="body-area">
+        <h3>Featured Products</h3>
+        <!-- Loop through featured products -->
+        <div class="row">
+          <div class="col card-deck" *ngFor="let product of products">
+              <app-product-card [product]="product"></app-product-card>
+          </div>
+        <!-- Repeat the card structure for more products -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-4">
+  <div class="container">
+    <span class="text-muted">© 2024 Company Name. All rights reserved.</span>
+  </div>
+</footer>
+

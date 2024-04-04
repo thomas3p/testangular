@@ -1,22 +1,22 @@
-<div >
-    <div>
-        <div class="header">
-            <div class="full-name">
-              <span>Name:{{item.fname}} {{item.lname}}</span>
-            </div>
-            <div class="full-name">
-                <span class="email">Nickname: </span>
-                <span class="nick-name">{{item.nickname}}</span>
-              </div>
-            <div class="contact-info">
-              <span class="email">ID: </span>
-              <span class="email-val">{{item.id}}</span>
-              <span class="separator"></span>
-            </div>
-            <div>
-              <span class="phone">Phone: </span>
-              <span class="phone-val">{{item.tel}}</span>
-            </div>
-          </div>
-    </div> 
-</div>
+<body>
+  <div class="container">
+    <img src="https://kku.world/kpaip" alt="Profile Picture">
+    <h1>{{item.fname}} {{item.lname}}</h1>
+    <div class="info">
+        <table>
+            <tr>
+                <th>ชื่อเล่น</th>
+                <td>{{item.nickname}}</td>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <td>{{item.id}}</td>
+            </tr>
+            <tr>
+                <th>เบอร์โทรศัพท์</th>
+                <td>{{item.tel}}</td>
+            </tr>
+        </table>
+    </div>
+  </div>
+</body>

@@ -7,11 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
   detail={
-    fname:'xxxxxxxxxx',
-    lname:'xxxxxxx',
-    nickname: 'xxxxx',
-    id:'xxxxxxxxxxxxx',
-    tel:'xxx-xxxxxxx'
+    fname:'ปฐวิกรณ์',
+    lname:'สีไว',
+    nickname: 'โตโน่',
+    id:'643021238-0',
+    tel:'098-1161304'
   }
 
   ngOnInit(): void {

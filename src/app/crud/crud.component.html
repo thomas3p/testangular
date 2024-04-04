@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="form-label" for="usr">Name:</label>
+          <input type="text" class="form-control form-control-label" placeholder="Name" [(ngModel)]="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="age">Age:</label>
+          <input type="text" class="form-control form-control-label" placeholder="Age" [(ngModel)]="age">
+        </div>
+        <div class="btn-container">
+          <button type="button" class="btn btn-primary mr-2" (click)="updateRow()">Update</button>
+          <button type="button" class="btn btn-success" (click)="createRow()">Add</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Name</th>
+              <th>Age</th> 
+              <th>Tool</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of list;index as i;">
+            <tr>
+              <td>{{i+1}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.age}}</td>
+              <td>
+                <button type="button" class="btn btn-warning" (click)="setUpdateRow(item,i)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
