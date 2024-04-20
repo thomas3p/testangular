@@ -1,0 +1,4 @@
+@Cont
+export class AuthControl{
+
+}

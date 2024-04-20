@@ -9,7 +9,7 @@ import { RegisterComponent } from './page/register/register.component';
 import { DetailComponent } from './detail/detail.component';
 import { BoxDetailComponent } from './box-detail/box-detail.component';
 import { BoxRegisterComponent } from './module/box-register/box-register.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CrudComponent } from './crud/crud.component';
 import { StoreComponent } from './page/store/store.component';
 import { CatalogComponent } from './page/catalog/catalog.component';
@@ -22,6 +22,10 @@ import { ProductCardComponent } from './module/product-card/product-card.compone
 import { ProductListComponent } from './module/product-list/product-list.component';
 import { SidebarComponent } from './module/sidebar/sidebar.component';
 import { HeaderComponent } from './module/header/header.component';
+import { ProductDetailCardComponent } from './page/product-detail-card/product-detail-card.component';
+import { CatagoryComponent } from './module/catagory/catagory.component';
+import { ImageProductComponent } from './module/image-product/image-product.component';
+import { BoxLoginComponent } from './module/box-login/box-login.component';
 
 
 @NgModule({
@@ -42,6 +46,10 @@ import { HeaderComponent } from './module/header/header.component';
     ProductListComponent,
     SidebarComponent,
     HeaderComponent,
+    ProductDetailCardComponent,
+    CatagoryComponent,
+    ImageProductComponent,
+    BoxLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,8 @@ import { HeaderComponent } from './module/header/header.component';
     ReactiveFormsModule,
     NgbModule,
     BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,23 +27,56 @@
  </div>
 </div>
 -->
-<nav class="p-3 text-bg-dark">
-  <div class="container">
+<nav class="p-3 text-bg-dark shadow sticky-top d-flex" id="top">
+  <div class="container-fluid shadow">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"></a><ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <a class="navbar-brand" [routerLink]="['/index']"><img src="https://github.com/thomas3p/testangular/blob/4c3ab8865fee029d95eb161f46a89d2430af0dcf/src/image/Please.png?raw=true" alt="..." style="height: 60px;width: auto;"></a>
+      <a class="navbar-brand d-block text-start" [routerLink]="['/index']"><img src="https://github.com/thomas3p/testangular/blob/4c3ab8865fee029d95eb161f46a89d2430af0dcf/src/image/Please.png?raw=true" alt="..." style="height: 60px;width: auto;"></a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0  d-none d-lg-flex">
         <li>
           <a [routerLink]="['/index']" class="nav-link px-2 text-warning">Home</a>
         </li>
         <li>
-          <a routerLink="['/catalog']" class="nav-link px-2 text-white">Catalog</a>
+          <a [routerLink]="['/catalog']" (click)="clickf()" class="nav-link px-2 text-white">All</a>
         </li>
+        <li *ngFor="let item of topbar">
+          <a [routerLink]="['/catalog',item]" (click)="clickf()" class="nav-link px-2 text-white">{{item}}</a>
+        </li>
+        
       </ul>
-      <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2" [routerLink]="['/login']" >Login</button>
-        <button type="button" class="btn btn-warning" [routerLink]="['register']" >Sign-up</button>
+      <div class="text-end d-none d-lg-flex">
+        <ng-container *ngIf="isLoggedIn(); else showLoginButtons">
+          <!-- แสดงโปรไฟล์ -->
+          <button type="button" class="btn btn-outline-light me-2" [routerLink]="['/profile']">Profile</button>
+          <button type="button" class="btn btn-warning" (click)="logout()">Logout</button>
+        </ng-container>
+        <ng-template #showLoginButtons>
+          <button type="button" class="btn btn-outline-light me-2" (click)="loginclick()">Login</button>
+          <button type="button" class="btn btn-warning" (click)="clickf()"  [routerLink]="['/register']">Sign-up</button>
+        </ng-template>
       </div>
+      <div class="dropdown d-sm-flex d-lg-none text-end justify-content-end">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          ☰
+        </a>
+      
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li>
+            <a [routerLink]="['/catalog']" class="dropdown-item nav-link px-2 text-dark">All</a>
+          </li>
+          <li *ngFor="let item of topbar">
+            <a [routerLink]="['/catalog',item]" class="dropdown-item nav-link px-2 text-dark">{{item}}</a>
+          </li>
+        </ul>
+      </div> 
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<div>
+  <ng-container *ngIf="ccheck; else showIndex">
+    <app-login (status)="logincheck"></app-login>
+  </ng-container>
+  <ng-template #showIndex>
+    <!-- แสดงปุ่ม Login/Sign-up -->
+    <router-outlet (activate)="gotoTop()"></router-outlet>
+  </ng-template>
+</div>

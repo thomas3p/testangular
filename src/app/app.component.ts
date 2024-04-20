@@ -9,27 +9,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AppComponent implements OnInit {
   title = 'Expinc';
   form: FormGroup | undefined
-
-  user={
-    usernam:'',
-    password:'',
-    status_login : false,
-    firstname: '',
-    lastname:'',
-    nickname: '',
-    tel:'',
-    address:{
-      detail:'',
-      province:'',
-      district:'',
-      subdistrict:''
-    }
-  }
+  testcase = ['testcase','johnson','jenny','ann','scott']
 
   constructor(private fb: FormBuilder){
 
   }
-
+  gotoTop() {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+    });
+  }
   ngOnInit(): void {
       this.form = this.fb.group({
         firstname: ['Pathawikorn',Validators.compose([Validators.required,Validators.maxLength(30)])],
@@ -41,4 +32,21 @@ export class AppComponent implements OnInit {
       console.log(this.form);
       
   }
+  logincheck:boolean=true;
+  isLoggedIn(){
+    return this.logincheck
+  }
+  logout(){
+    this.logincheck=false
+  }
+  ccheck=false;
+  loginclick(){
+    this.ccheck = true
+    console.log(this.ccheck);
+    
+  }
+  clickf(){
+    this.ccheck = false
+  }
+  topbar = ['Mobile','Tablet','Wearable','Accessory','Appliance','TV'];
 }

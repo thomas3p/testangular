@@ -1,26 +1,20 @@
-<div class="card">
-  <div class="image-container">
-    <div class="first">
-      <div class="d-flex justify-content-between align-items-center">
-        </div>
+
+<a [routerLink]="['/product', product.id,product.name]"  class="link-light">
+  <div class="card zoom border">
+    <div class="image-container">
+      <img [src]="product.imageUrl" class="img-fluid rounded thumbnail-image">
     </div>
-    <img [src]="product.imageUrl" class="img-fluid rounded thumbnail-image">
+    <div class="product-detail-container">
+        <div class="d-flex justify-content-between align-items-center">
+          <h5 class="product-name">{{ product.name }}</h5>
+          <div class="d-flex flex-column text-end">
+            <span class="price">{{ product.price|currency: 'THB' : 'code'  }}</span>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- <span class="buy">{{}}</span>      -->
+        </div>
+    </div>  
   </div>
-  <div class="product-detail-container p-2">
-      <div class="d-flex justify-content-between align-items-center">
-        <h5 class="product-name">{{ product.name }}</h5>
-        <div class="d-flex flex-column mb-2">
-          <span class="price">${{ product.price }}</span>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between align-items-center pt-1">
-      </div>
-      <div class="d-flex justify-content-between align-items-center pt-1">
-        <div>
-          <i class="fa fa-star-o rating-star"></i>
-          <span class="rating-number">4.8</span>
-        </div>
-        <span class="buy">BUY +</span>        
-      </div>
-  </div>  
-</div>
+
+</a> 

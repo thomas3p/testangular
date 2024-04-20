@@ -1,63 +1,41 @@
-<!-- 
-<app-header></app-header>
-<div>
-    <app-banner [imageSrc]="'https://cf.shopee.co.th/file/th-50009109-e8b047745f4497bc408dfd95043b2366'"></app-banner>
-</div>
-<main>
-    <div class="container-fluid">
-      <div class="row">
-        <app-sidebar></app-sidebar>
-        <div class="col-md-3">
-          <div class="category-item">
-            <ul class="list-group">
-              <li class="list-group-item">Category 1</li>
-              <li class="list-group-item">Category 2</li>
-              <li class="list-group-item">Category 3</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col card-deck" *ngFor="let product of products">
-                <app-product-card [product]="product"></app-product-card>
-            </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </main> -->
-    <!-- <div class="row">
-        <app-sidebar></app-sidebar>
-        
-    </div> -->
 
-
-    <!-- index.component.html -->
-<div class="container-fluid bg-dark">
-  <!-- Header -->
-  <app-header class="bg-dark"></app-header>
-  <!-- Banner -->
-  <div class="banner">
+<div class="container-fluid bg-ligth">
+  <app-header ></app-header>
+  <div class="banner  d-none d-lg-flex justify-content-center">
     <app-banner [images]="images"></app-banner>
   </div>
-  <!-- Body -->
-  <div class="row mt-4">
-    <!-- Sidebar -->
-    <!-- Body Area -->
-    <div class="col-md-12 d-flex justify-content-center">
-      <div class="body-area">
-        <h3>Best Seller</h3>
-        <!-- Loop through featured products -->
+  <div class="container d-flex justify-content-center d-none d-lg-flex text-center"> 
+    <div class="row ">
+      <div class="col-sm-2 text-center" *ngFor="let item of catagory ">
+        <app-catagory [key]="item" ></app-catagory>
+    </div>
+    </div>
+  </div>
+  <div class=" container d-flex justify-content-center">
+    <div>
+      <div class="body-area text-dark d-none d-lg-block">
+        <h3 class="mt-3">Best Seller</h3>
         <div class="row">
-          <div class="col card-deck" *ngFor="let product of products.slice(0,5)">
-              <app-product-card [product]="product"></app-product-card>
+          <div type="button" class="col-sm-3 d-flex justify-content-center  d-sm-col-6 "  *ngFor="let item of products?.slice(0,4)">
+              <app-product-card [product]="item"></app-product-card>
           </div>
-        <!-- Repeat the card structure for more products -->
       </div>
     </div>
   </div>
 </div>
-<!-- Footer -->
+<div class=" container d-flex justify-content-center">
+  <div>
+    <div class="body-area text-dark d-sm-flex d-lg-none">
+      <h3 class="mt-3">Best Seller</h3>
+      <div class="row">
+        <div type="button" class="col-6 d-block justify-content-center "  *ngFor="let item of products?.slice(0,4)">
+            <app-product-card [product]="item"></app-product-card>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
 <footer class="footer mt-4">
   <div class="container">
     <span class="text-muted">© 2024 Company Name. All rights reserved.</span>

@@ -7,5 +7,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ProductCardComponent {
   @Input() product: any;
+  
   // @Output() addToCart: EventEmitter<any> = new EventEmitter<any>();
 }
